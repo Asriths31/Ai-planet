@@ -1,38 +1,196 @@
-.App {
-  text-align: center;
+/* .tools{
+  width: 40px;
+  margin-top: '20px';
+  display: 'flex';
+  flex-wrap: 'wrap';
+  gap: '10px' ;
+} */
+.toolbar{
+  position: absolute;
+  display: block;
+  width: 14vw;
+  margin:5vh 0 5vh 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 70vh;
+  z-index: 99;
+  top: 10vh;
+}
+.toolbar p{
+  font-size: large;
+  font-weight: 600;
+  margin: 4px 0 0 5px;
+  
+  /* background-color: aqua; */
+  padding: 0px 0px 10px 0px;
+  width: 95%;
+  border-bottom: 1px solid rgb(0,0,0,0.3);
+}
+.toolbar h6{
+  color: rgb(68,68,68,0.5);
+  font-size: small;
+  font-weight: 600;
+  margin: 20px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* draggablenodes */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.draggableNode{
+  
+  display: flex; 
+  cursor: grab;
+  width: 13vw; 
+  height: 30px;
+  align-items: center; 
+  border-radius: 8px;
+  background-color: #ffffff;
+  justify-content: space-between; 
+  border: 1px solid #94a3b8;
+  margin-bottom: 20px;
+ }
+ .draggableNode div{
+  /* width: 9vw; */
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* justify-content: space-between; */
+  
+ }
+ .draggableNode span{
+  color: #0f172a;
+  font-size: smaller;
+  font-weight: 500;
+
+ }
+ .draggableNode img{
+  height: 13.33px;
+  width: 12px;
+  margin:0 7px 0 10px;
+ }
+.ui{
+
+  background-color: #fafafa;
 }
 
-.App-link {
-  color: #61dafb;
+ /* navbar */
+.navbar{
+  padding: 10px 50px;
+   background-color: #ffffff;
+   height:6vh;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.navbar img{
+  
+  width: 124px;
+  height: 33px;
+}
+.navbar div{
+  display: flex;
+}
+.navbar button{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(0,0,0,0.3);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  width: 78px;
+  height: 31px;
+  margin-right:10px ;
+}
+.navbar button:nth-child(2){
+  background-color:#44942c;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar button img{
+  height: 14px;
+  width: 14px;
+}
+
+/* nodes */
+
+.input-node,.llm-node,.output-node{
+  display: block;
+  border-radius: 12px;
+  padding: 20px; 
+  width: 305px;
+  min-height: 268px;
+  background-color: #ffffff;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: small;
+  font-weight: 700;
+}
+.header img{
+  height: 12px;
+  width: 12px;
+  margin-right: 12px;
+}
+.status{
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #666666;
+}
+.node-des p{
+  width: 290px;
+  font-size: small;
+  font-weight: 600;
+  color: #666666;
+  background-color: #eef4ff;
+  width: 100%;
+  margin-left: -20px;
+  padding: 10px 20px;
+
+}
+.right-handle{
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  /* top: 10px; */
+  left: 70%;
+  width: 30%;
+  top: 70%;
+}
+.right-handle span{
+  font-size: smaller;
+  font-weight: 600;
+  color: #666666;
+}
+.left-handle{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  /* top: 10px; */
+  left: 0;
+  width:100px;
+  top: 70%;
+}
+.left-handle p{
+  font-size: smaller;
+  font-weight: 600;
+  color: #666666;
+}
+.node-details{
+  display: block;
+}
+.node-details p{
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: small;
+}
+.node-details input{
+  border: 1px solid rgb(102,102,102,0.35);
+  border-radius: 4.3px;
+  width: 291px;
+  height: 34px;
+  text-indent: 20px;
+  
 }

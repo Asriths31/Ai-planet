@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { useCallback } from 'react';
+import {PipelineToolbar} from "./comp/toolbar"
+import { PipelineUI } from './comp/pipelineUi';
+import './App.css'
+ 
+import 'reactflow/dist/style.css';
+ 
+export default function App() {
+ 
+ 
+ 
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width: '100vw', height: '100vh' }}>
+      <PipelineToolbar />
+      <PipelineUI />
     </div>
   );
 }
-
-export default App;

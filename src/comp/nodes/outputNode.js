@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Handle, Position } from 'reactflow';
-import outputLogo from './assets/customOutput.png'
+import outputLogo from '../assets/customOutput.png'
 export const OutputNode = ({ id, data }) => {
   // console.log("id",id,"data",data)
 
@@ -21,7 +21,7 @@ export const OutputNode = ({ id, data }) => {
             
 
       <div className='left-handle'>
-           <Handle type='source'></Handle>
+           <Handle type='target' position={Position.Left}></Handle>
            <p>LLM Engine</p>
       </div>
       <div className='header'>

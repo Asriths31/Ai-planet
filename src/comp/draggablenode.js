@@ -1,8 +1,8 @@
 // draggableNode.js
-import customInput from "../assets/customInput.png"
+import customInput from "./assets/customInput.png"
 import customOutput from "./assets/customOutput.png"
-import LLM from "../assets/LLM.png"
-import menu from "../assets/menu.png"
+import LLM from "./assets/LLM.png"
+import menu from "./assets/menu.png"
 
 export const DraggableNode = ({ type, label,inputs,outputs,inputType }) => {
     const onDragStart = (event, nodeType) => {

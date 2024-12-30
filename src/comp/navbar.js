@@ -1,6 +1,6 @@
 import react from "react";
-import logo from "../assets/logo.png"
-import runLogo from '../assets/runLogo.png'
+import logo from "./assets/logo.png"
+import runLogo from './assets/runLogo.png'
 function Navbar(){
 
 

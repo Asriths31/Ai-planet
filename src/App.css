@@ -117,8 +117,11 @@
   border-radius: 12px;
   padding: 20px; 
   width: 305px;
-  min-height: 268px;
+  height: 268px;
   background-color: #ffffff;
+}
+.llm-node{
+   height: 596px;
 }
 .header{
   display: flex;
@@ -156,7 +159,7 @@
   /* top: 10px; */
   left: 70%;
   width: 30%;
-  top: 70%;
+  top: 80%;
 }
 .right-handle span{
   font-size: smaller;
@@ -170,8 +173,8 @@
   position: absolute;
   /* top: 10px; */
   left: 0;
-  width:100px;
-  top: 70%;
+  width:30%;
+  top: 75%;
 }
 .left-handle p{
   font-size: smaller;
@@ -191,6 +194,13 @@
   border-radius: 4.3px;
   width: 291px;
   height: 34px;
-  text-indent: 20px;
+  text-indent: 14px;
   
+}
+.node-details select{
+  width: 291px;
+  height: 34px;
+  border: 1px solid rgb(102,102,102,0.35);
+  text-indent: 10px;
+  border-radius: 4.3px;
 }

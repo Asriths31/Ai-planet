@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Handle,Position } from 'reactflow';
-import inputLogo from './assets/customInput.png'
+import inputLogo from '../assets/customInput.png'
 
 
 export const InputNode = ({ id, data }) => {

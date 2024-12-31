@@ -118,6 +118,17 @@
   background-color:#44942c;
 
 }
+.navbar button:nth-child(2):hover{
+  
+  background-color:#44942ca9;
+
+}
+.navbar button:nth-child(2):focus{
+  
+  background-color:#44942c;
+
+}
+
 
 .navbar button img{
   height: 14px;
@@ -150,10 +161,36 @@
   margin-right: 12px;
 }
 .status{
+  /* position: relative;   */
   height: 8px;
   width: 8px;
   border-radius: 50%;
   background-color: #666666;
+}
+.err-msg{
+  top: -27px;
+  right: -60px;
+  position: absolute;
+  background-color: #ff5353;
+  color:#ffffff;
+  width: auto;
+  padding: 0 20px;
+  height: 40px;
+  border-radius: 6px;
+}
+.arrow{
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background-color: #ff5353;
+  top:30px;
+  left: 48.5%;
+  transform: rotate(45deg);
+
+
+}
+.err-span{
+  display:none;
 }
 .node-des p{
   width: 290px;

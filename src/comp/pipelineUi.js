@@ -42,7 +42,8 @@ export const PipelineUI = () => {
     const reactFlowWrapper = useRef(null);
     const [reactFlowInstance, setReactFlowInstance] = useState(null);
     const[isEmpty,setIsempty]=useState(true)
-    const[run,setRun]=useState(false)
+    const[run,setRun]=useState(true)
+    console.log(run)
     const {
       nodes,
       edges,
@@ -52,9 +53,8 @@ export const PipelineUI = () => {
       onEdgesChange,
       onConnect
     } = useStore(selector, shallow);
-    console.log(isEmpty)
     const getInitNodeData = (nodeID, type) => {
-      let nodeData = { id: nodeID, nodeType: `${type.nodeType}`,inputs:`${type.inputs}`,outputs:`${type.outputs}`,inputType:`${type.inputType}`,setRun:`${setRun()}`,run:`${run}` };
+      let nodeData = { id: nodeID, nodeType: `${type.nodeType}`,inputs:`${type.inputs}`,outputs:`${type.outputs}`,inputType:`${type.inputType}`,setRun:`${setRun}`,run:`${run}` };
       return nodeData;
     }
 
@@ -66,7 +66,6 @@ export const PipelineUI = () => {
           if (event?.dataTransfer?.getData('application/reactflow')) {
             const appData = JSON.parse(event.dataTransfer.getData('application/reactflow'));
             const type = appData;
-            console.log(type)
       
             // check if the dropped element is valid
             if (typeof type.nodeType === 'undefined' || !type.nodeType) {

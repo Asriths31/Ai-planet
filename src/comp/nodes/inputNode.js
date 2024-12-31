@@ -8,16 +8,14 @@ import inputLogo from '../assets/customInput.png'
 export const InputNode = ({ id, data }) => {
 
   console.log("id",id,"data",data.run)
-   const[running,setRunning]=useState(data.run)
    const[input,setInput]=useState("")
    const[err,setErr]=useState(false)
-  console.log(err,"running",running)
   function handleChange(e){ 
     setInput(e.target.value)
   }
   
  useEffect(()=>{
-  if(running===true){
+  if(data.run==='true'){
   if(input===""){
     setErr(true)  
     console.log("error detected")
@@ -25,8 +23,10 @@ export const InputNode = ({ id, data }) => {
   }
   else{
     setErr(false)
+    console.log("ksehfkseg")
   }}
- },[data.run])
+  console.log("kddj")
+ },[input])
    return (
     <div className='input-node' style={err?{border:"1px solid #ff5353"}:{border:"none"}}>
         <div className='right-handle'>
@@ -41,6 +41,11 @@ export const InputNode = ({ id, data }) => {
         <div className='status' style={err?{backgroundColor:"#ff5353"}:{backgroundColor:"#666666"}}>
 
         </div>
+        {err?
+           <div className='err-msg'>
+                <p>Please fill All the boxes</p>
+                <div className='arrow'></div>
+           </div>:<span className="err-span"></span>}
       </div>
       <div className='node-des'>
            <p>Write the input/ question you want to ask</p>

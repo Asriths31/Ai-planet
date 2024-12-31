@@ -1,6 +1,9 @@
-import react from "react";
+import React,{createContext,useContex,useState } from "react";
 import logo from "./assets/logo.png"
 import runLogo from './assets/runLogo.png'
+
+
+
 function Navbar({setRun,run}){
     console.log(run)
     function handleClick(){

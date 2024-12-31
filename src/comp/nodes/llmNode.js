@@ -7,25 +7,16 @@ import llmLogo from '../assets/LLM.png'
 
 export const LLMNode = ({ id, data }) => {
   // console.log("id",id,"data",data)
-  const [inputType, setInputType] = useState(data.inputType || 'Text');
-  const[currName,setCurrName]=useState("")
-
-  const handleNameChange = (e) => {
-    setCurrName(e.target.value);
-  };
-
-  const handleTypeChange = (e) => {
-    setInputType(e.target.value);
-  };
+ 
 
   return (
     <div className='llm-node'>
       <div className='right-handle'>
           <span>Output</span>
-          <Handle type='source' position={Position.Right}></Handle>
+          <Handle type='source' position={Position.Right} style={{backgroundColor:"#ffffff",border:"1px solid #7d5ac7"}}></Handle>
       </div>
       <div className='left-handle'>
-           <Handle type='target' position={Position.Left}></Handle>
+           <Handle type='target' position={Position.Left} style={{backgroundColor:"#ffffff",border:"1px solid #7d5ac7"}}></Handle>
            <p>Input</p>
       </div>
       <div className='header'>

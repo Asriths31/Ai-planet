@@ -5,23 +5,12 @@ import { Handle, Position } from 'reactflow';
 import outputLogo from '../assets/customOutput.png'
 export const OutputNode = ({ id, data }) => {
   // console.log("id",id,"data",data)
-
-  const [outputType, setOutputType] = useState(data.outputType || 'Text');
-  const[currName,setCurrName]=useState("")
-  const handleNameChange = (e) => {
-    setCurrName(e.target.value);
-  };
-
-  const handleTypeChange = (e) => {
-    setOutputType(e.target.value);
-  };
-
   return (
     <div  className='output-node'>
             
 
       <div className='left-handle'>
-           <Handle type='target' position={Position.Left}></Handle>
+           <Handle type='target' position={Position.Left} style={{backgroundColor:"#ffffff",border:"1px solid #7d5ac7"}}></Handle>
            <p>LLM Engine</p>
       </div>
       <div className='header'>

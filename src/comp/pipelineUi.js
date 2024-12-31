@@ -10,6 +10,7 @@ import { InputNode } from './nodes/inputNode';
 import { OutputNode } from './nodes/outputNode';
 import { LLMNode } from './nodes/llmNode';
 import Navbar from './navbar'
+import dragDrop from './assets/drag&dropLogo.png'
 // import { SubmitButton } from './submit';
 
 
@@ -36,11 +37,12 @@ const selector = (state) => (state1=state,
   onEdgesChange: state.onEdgesChange,
   onConnect: state.onConnect,
 });
-
 export const PipelineUI = () => {
     
     const reactFlowWrapper = useRef(null);
     const [reactFlowInstance, setReactFlowInstance] = useState(null);
+    const[isEmpty,setIsempty]=useState(true)
+    const[run,setRun]=useState(false)
     const {
       nodes,
       edges,
@@ -50,16 +52,16 @@ export const PipelineUI = () => {
       onEdgesChange,
       onConnect
     } = useStore(selector, shallow);
-  //  console.log(selector,shallow)
+    console.log(isEmpty)
     const getInitNodeData = (nodeID, type) => {
-      let nodeData = { id: nodeID, nodeType: `${type.nodeType}`,inputs:`${type.inputs}`,outputs:`${type.outputs}`,inputType:`${type.inputType}` };
+      let nodeData = { id: nodeID, nodeType: `${type.nodeType}`,inputs:`${type.inputs}`,outputs:`${type.outputs}`,inputType:`${type.inputType}`,setRun:`${setRun()}`,run:`${run}` };
       return nodeData;
     }
 
     const onDrop = useCallback(
         (event) => {
           event.preventDefault();
-    
+          setIsempty(false)
           const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
           if (event?.dataTransfer?.getData('application/reactflow')) {
             const appData = JSON.parse(event.dataTransfer.getData('application/reactflow'));
@@ -83,7 +85,7 @@ export const PipelineUI = () => {
               position,
               data: getInitNodeData(nodeID, type),
             };
-      
+         
             addNode(newNode);
           }
         },
@@ -100,7 +102,7 @@ export const PipelineUI = () => {
     return (
         <>
         <div ref={reactFlowWrapper} style={{width: '100wv', height: '100vh'}} className='ui'>
-            <Navbar></Navbar>
+            <Navbar setRun={setRun} run={run}></Navbar>
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
@@ -115,8 +117,12 @@ export const PipelineUI = () => {
                 snapGrid={[gridSize, gridSize]}
                 connectionLineType='smoothstep'
             >
+              {isEmpty?(<div className='drag-drop'>
+                      <img src={dragDrop}></img>
+                      <p>Drag & drop to get started</p>
+                       </div>):<span></span>}
                 <Background color="blue" gap={gridSize} />
-                <Controls />
+                <Controls  style={{left:"20%",top:"65%",backgroundColor:"#fafafa",border:"none"}}/>
             </ReactFlow>
             {/* <SubmitButton selector={state1}/> */}
         </div>

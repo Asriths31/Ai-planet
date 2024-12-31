@@ -1,10 +1,27 @@
-/* .tools{
-  width: 40px;
-  margin-top: '20px';
-  display: 'flex';
-  flex-wrap: 'wrap';
-  gap: '10px' ;
-} */
+
+/* pipelineui */
+.ui{
+
+  background-color: #fafafa;
+}
+
+.drag-drop{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform:translate(-50%,-50%) ;
+  font-size: medium;
+  font-weight: 600;
+}
+.drag-drop img{
+  height: 78px;
+  width: 78px;
+}
+/* toolbar */
 .toolbar{
   position: absolute;
   display: block;
@@ -66,10 +83,7 @@
   width: 12px;
   margin:0 7px 0 10px;
  }
-.ui{
-
-  background-color: #fafafa;
-}
+ 
 
  /* navbar */
 .navbar{
